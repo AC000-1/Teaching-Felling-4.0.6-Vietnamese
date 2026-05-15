@@ -58,11 +58,7 @@
   function toggleFullscreen() {
 
     // Nếu đang fullscreen -> thoát
-    if (
-      document.fullscreenElement ||
-      document.webkitFullscreenElement ||
-      document.msFullscreenElement
-    ) {
+    if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
 
       if (document.exitFullscreen) {
         document.exitFullscreen();
