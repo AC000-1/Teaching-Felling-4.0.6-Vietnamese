@@ -52,16 +52,56 @@
 
 <script type="text/javascript" src="./tyrano/libs/lz-string.min.js"></script>
 
+<button onclick="toggleFullscreen()">Toàn Màn Hình</button>
 <script type="text/javascript">
-function doScroll() { if (window.pageYOffset === 0) { window.scrollTo(0,1); } }  
-window.onload = function() { setTimeout(doScroll, 100); }  
+
+  function toggleFullscreen() {
+
+    // Nếu đang fullscreen -> thoát
+    if (
+      document.fullscreenElement ||
+      document.webkitFullscreenElement ||
+      document.msFullscreenElement
+    ) {
+
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } 
+      else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } 
+      else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+
+    } 
+    
+    // Nếu chưa fullscreen -> bật
+    else {
+
+      let elem = document.documentElement;
+
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } 
+      else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      } 
+      else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      }
+
+    }
+  }
+
+  function doScroll() { if (window.pageYOffset === 0) { window.scrollTo(0,1); } }  
+  window.onload = function() { setTimeout(doScroll, 100); }  
 </script>  
 
 </head>
 
 <body onselectstart="return false" onContextmenu="return false" ontouchmove="event.preventDefault()" >
-
-<div id="tyrano_base" class="tyrano_base" style="overflow:hidden" unselectable="on" ondragstart="return false" ></div>
+  <div id="tyrano_base" class="tyrano_base" style="overflow:hidden" unselectable="on" ondragstart="return false" ></div>
 
 
 <!--  First シナリオファイルに外部ファイルを利用したい場合は、こちらにシナリオファイルのURLを指定できます-->
