@@ -1,2 +1,2 @@
 # Teaching-Felling-4.0.6-Vietnamese
-[> Play Game](https://ac000-1.github.io/Teaching-Felling-4.0.6-Vietnamese/index.html)
+[> Play Game](https://ac000-1.github.io/Teaching-Felling-4.0.6-Vietnamese/www/index.html)
